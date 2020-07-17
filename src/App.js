@@ -1,15 +1,14 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        dds
+class App extends React.Component{
+  render(){
+    return(
+      <div class="container">
+        <p>dsdsada</p>
       </div>
     );
   }
+
 }
 
 export default App;
