@@ -1,11 +1,18 @@
 import React from "react";
-import CovidComponent from "./components/covid" 
+import CovidForm from "./components/covidForm" 
 
 class App extends React.Component{
+
+  getCovidJson = async (e) => {
+    e.preventDefault();
+    
+    alert("invoked");
+  }
+
   render(){
     return(
       <div>r
-        <CovidComponent />
+        <CovidForm CovidSubmitMethod = {this.getCovidJson}/>
        </div>
     );
   }
