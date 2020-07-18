@@ -17,15 +17,10 @@ class App extends React.Component{
         } 
       }).then(response => {
           return response.json();
-      }).then(json => {
-        console.log(json);
-        alert("invoked");
       });
       
-    //let result = await data.json();
-    //console.log(result);
-    //alert("invoked");
-
+      alert("invoked");
+      console.log(data);
 
 
   }
