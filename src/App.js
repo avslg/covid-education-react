@@ -15,10 +15,16 @@ class App extends React.Component{
           "x-rapidapi-host": xApiHost,
           "x-rapidapi-key": xApiKey
         } 
+      }).then(response => {
+          return response.json();
+      }).then(json => {
+        console.log(json);
+        alert("invoked");
       });
-    let result = await data.json();
-    console.log(result);
-    alert("invoked");
+      
+    //let result = await data.json();
+    //console.log(result);
+    //alert("invoked");
 
 
 
