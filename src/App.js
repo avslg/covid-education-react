@@ -6,15 +6,36 @@ class App extends React.Component{
     super();
     this.state = {
       jsonData: "",
-      allCasees:""
+      totalCases: "",
+      newCases: "",
+      activeCases: "",
+      criticalCases: "",
+      recovered: "",
+      newDeaths: "",
+      totalDeaths: "",
+      date: "",
+      time: "" 
     }
 
     this.updateStats = this.updateStats.bind(this);//Чтобы не терялся контекст при передаче метода в слушатель
   }
 
-  updateStats(){
-    let result = this.getCovidJson();
-    alert("update");
+  async updateStats(){
+    let result = await this.getCovidJson();
+    console.log(result);
+
+    this.setState({
+      jsonData: result,
+      totalCases: result.response[0].cases.total,
+      newCases: result.response[0].cases.new,
+      activeCases: result.response[0].cases.active,
+      criticalCases: result.response[0].cases.critical,
+      recovered: result.response[0].cases.recovered,
+      newDeaths: result.response[0].deaths.new,
+      totalDeaths: result.response[0].deaths.total,
+      date: result.response[0].day,
+      time:result.response[0].time
+    });
 
    }
 
@@ -35,22 +56,23 @@ class App extends React.Component{
           return response.json();
       });
       
-      this.setState({
-        jsonData: JSON.stringify(data)
-      });
-
-      alert("invoked");
-      console.log(data);
       return data;
   }
 
   render(){
     return(
       <div>r
-        <CovidForm CovidSubmitMethod={this.getCovidJson}/>
+        <CovidForm CovidSubmitMethod={this.getCovidJson} timeCovid={this.state.time}/>
           <button onClick={this.updateStats}>button</button>
-          <label>{this.state.jsonData}</label>
-
+          <label>{this.state.totalCases}</label><br/>
+          <label>{this.state.newCases}</label><br/>
+          <label>{this.state.activeCases}</label><br/>
+          <label>{this.state.criticalCases}</label><br/>
+          <label>{this.state.recovered}</label><br/>
+          <label>{this.state.newDeaths}</label><br/>
+          <label>{this.state.totalDeaths}</label><br/>
+          <label>{this.state.date}</label><br/>
+          <label>{this.state.time}</label><br/>
       </div>
      );
   }
