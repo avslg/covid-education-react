@@ -5,7 +5,7 @@ class CovidForm extends React.Component{
     render(){
         return(
             <form onSubmit={this.props.CovidSubmitMethod}>
-                <input type = "text" />
+                <input type="text" />
             </form>
         );
     }
