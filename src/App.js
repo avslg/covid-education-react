@@ -16,6 +16,7 @@ class App extends React.Component{
       date: "",
       time: "" 
     }
+    
 
     this.updateStats = this.updateStats.bind(this);//Чтобы не терялся контекст при передаче метода в слушатель
   }
@@ -61,7 +62,7 @@ class App extends React.Component{
 
   render(){
     return(
-      <div>r
+      <div className="container">
         <CovidForm CovidSubmitMethod={this.getCovidJson} timeCovid={this.state.time}/>
           <button onClick={this.updateStats}>button</button>
           <label>{this.state.totalCases}</label><br/>

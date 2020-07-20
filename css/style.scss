@@ -1,0 +1,55 @@
+
+@mixin breakpoint-by-screen-size($minWidth,$maxWidth) {
+    @if $minWidth == null {
+        @media (max-width: $maxWidth){
+            @content;
+        }
+    }
+    @else{
+        @media (min-width: $minWidth) and (max-width: $maxWidth){
+            @content;
+        }
+    }
+    @if $maxWidth == null {
+        @media (min-width: $minWidth){
+            @content;
+        }
+    }
+    
+}
+
+$color : #534285;
+$backColor: #3b1489;
+
+
+
+body{
+    background-color: $backColor;
+}
+
+div.container{
+    background-color: ($color);
+   
+    @include breakpoint-by-screen-size(null, 320px){
+        background-color: yellowgreen;
+    }
+    
+    @include breakpoint-by-screen-size(321px, 479px){
+        background-color: #a3d9bab3;
+    }
+
+    @include breakpoint-by-screen-size(480px, 767px){
+        background-color: red;
+    }
+    @include breakpoint-by-screen-size(768px, 991px){
+        background-color: burlywood;
+    }
+    @include breakpoint-by-screen-size(992px, 1199px)
+    {
+        background-color: darkmagenta;
+    }
+    @include breakpoint-by-screen-size(1200px, null){
+        background-color: darkorange;
+    }
+}
+ 
