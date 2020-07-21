@@ -1,13 +1,20 @@
 import React from "react";
 
-
 class CovidForm extends React.Component{
     render(){
         return(
-            <form onSubmit={this.props.CovidSubmitMethod}>
-                <p>time: covid {this.props.timeCovid}</p>
-                <input type="text" />
-            </form>
+            <div className="form">
+                <p className="block-header"><h1>COVID 19</h1>
+                </p>
+                <p className="block-desc">
+                    <span>Статистика по заболеваемости коронавирусной инфекции</span>
+                </p> 
+                <form>
+                    <p>time: covid {this.props.timeCovid}</p>
+                    <input type="text" />
+                    <button onClick={this.props.clickCovid}>click</button>
+                </form>
+            </div>
         );
     }
 

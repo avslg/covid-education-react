@@ -21,7 +21,9 @@ class App extends React.Component{
     this.updateStats = this.updateStats.bind(this);//Чтобы не терялся контекст при передаче метода в слушатель
   }
 
-  async updateStats(){
+  async updateStats(e){
+    e.preventDefault();
+    
     let result = await this.getCovidJson();
     console.log(result);
 
@@ -63,17 +65,10 @@ class App extends React.Component{
   render(){
     return(
       <div className="container">
-        <CovidForm CovidSubmitMethod={this.getCovidJson} timeCovid={this.state.time}/>
-          <button onClick={this.updateStats}>button</button>
-          <label>{this.state.totalCases}</label><br/>
-          <label>{this.state.newCases}</label><br/>
-          <label>{this.state.activeCases}</label><br/>
-          <label>{this.state.criticalCases}</label><br/>
-          <label>{this.state.recovered}</label><br/>
-          <label>{this.state.newDeaths}</label><br/>
-          <label>{this.state.totalDeaths}</label><br/>
-          <label>{this.state.date}</label><br/>
-          <label>{this.state.time}</label><br/>
+            <CovidForm CovidSubmitMethod={this.getCovidJson}
+             timeCovid={this.state.time}
+             clickCovid={this.updateStats}
+             />
       </div>
      );
   }
