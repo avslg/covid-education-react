@@ -68,6 +68,11 @@ class App extends React.Component{
             <CovidForm CovidSubmitMethod={this.getCovidJson}
              timeCovid={this.state.time}
              clickCovid={this.updateStats}
+             totalCases={this.state.totalCases}
+             activeCases={this.state.activeCases}
+             criticalCases={this.state.criticalCases}
+             totalDeaths={this.state.totalDeaths}
+             newDeaths={this.state.newDeaths}
              />
       </div>
      );
