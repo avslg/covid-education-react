@@ -44,8 +44,11 @@ example
 }
 
 $color: #534285;
-$backColor: #481ba2;
-$borderColor: rgb(51, 115, 255);
+$backColor: #1e847f;
+$borderColor: #ecc19c;
+$gradientColor: black;
+$gradientColorTwo: #ecc19c;
+$gradientColorThree: $backColor;
 
 div.container{
     position: absolute;
@@ -66,14 +69,13 @@ div.container{
             margin-top: 20px;
             display: flex;
             justify-content: center;
-            background-color: white;
+            background-color: #f1cfb1;
             
             table{
                 margin-top: 20px;
                 margin-bottom: 20px;
                 tr:nth-child(2n){
-                    background-color: #99ade7;
-                    color: whitesmoke;
+                    background-color: #e9cdb4;
                 }
                 tr:nth-child(3n){
                     td:nth-child(-n+3){
@@ -82,7 +84,7 @@ div.container{
                 }
                 
                 .header-caption th:nth-child(-n+4){
-                    border-bottom: 4px solid $borderColor;
+                    border-bottom: 4px solid $backColor;
         
                 }
                 
@@ -91,17 +93,27 @@ div.container{
                     text-indent: 10px;
                 }
                 td{
-                    border-bottom: 2px solid $borderColor;
+                    border-bottom: 2px solid $backColor;
                 }
+            }
+        }
+        div.logo{
+            margin-left: 25px;
+            img{
+                width: 65px;
+                height: 65px;
             }
         }
     }   
 
     .block-header{
+        display: flex;
+        justify-content: center;
+
         font-family: 'Abril Fatface', cursive;
         margin-top: 50px;
         color:white;
-        text-align: center;
+        
         h1{
             color:white;
             font-size: 40px;
@@ -121,7 +133,7 @@ div.container{
     div.controls button{
         padding: 10px 40px 10px 40px;
         margin: 20px 0 20px 0;
-        background-color: $backColor;
+        background-color: black;
         color: white;
         font-size: 22px;
         border-color: white;
@@ -129,13 +141,14 @@ div.container{
         border-width: 3px;
     }
     div.controls button:hover{
-        background-color: lighten($backColor, $amount: 15);
+        background-color: darken($borderColor, $amount: 15);
+        color: black;
     }
 
     input[type=text]{
-        width: calc(100% - 50px);
-        margin-left: 25px;
-        margin-right: 25px;
+        width: calc(100% - 70px);
+        margin-left: 35px;
+        margin-right: 35px;
 
         background-color: $backColor;
         padding-left: 20px;
@@ -169,19 +182,35 @@ div.container{
     }
     
     @include breakpoint-by-screen-size(1200px, null){
-        background: rgb(71,214,246);
-        background: linear-gradient(90deg, rgba(71,214,246,1) 0%, rgba(88,89,233,1) 50%, rgba(0,68,167,1) 100%);   
-        .form{
-            
-            margin: 25px 20% 30px 20%;
-            .content-table{
-                table{
-                    th{
-                        min-width: 150px;
+        background: #ecc19c;
+        background: repeating-linear-gradient(45deg, 
+            transparent 0, transparent 40px,
+            $gradientColor 40px, $gradientColor 60px,
+            $gradientColorTwo 60px, $gradientColorTwo 120px,
+            $gradientColor 120px, $gradientColor 125px
+        ),
+        repeating-linear-gradient(-45deg, 
+        transparent 0, transparent 40px,
+        $gradientColor 40px, $gradientColor 60px,
+        $gradientColorTwo 60px, $gradientColorTwo 120px,
+        $gradientColor 120px, $gradientColor 125px
+        ),
+        linear-gradient(-45deg, $gradientColor, $gradientColorThree) ;
+        
+        
+        
+
+
+            .form{
+                margin: 25px 20% 30px 20%;
+                .content-table{
+                    table{
+                        th{
+                            min-width: 150px;
+                        }
+                        border-spacing: 15px 0;
                     }
-                    border-spacing: 15px 0;
                 }
-            }
          }
 
     }

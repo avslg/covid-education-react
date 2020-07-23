@@ -25,9 +25,9 @@ div.container {
 }
 
 div.container .form {
-  background-color: #481ba2;
+  background-color: #1e847f;
   border-style: solid;
-  border-color: #3373ff;
+  border-color: #ecc19c;
   border-width: 7px;
   -webkit-box-shadow: 0px 0px 18px 4px rgba(0, 0, 0, 0.31);
   -moz-box-shadow: 0px 0px 18px 4px rgba(0, 0, 0, 0.31);
@@ -39,7 +39,7 @@ div.container .form .content-table {
   margin-top: 20px;
   display: flex;
   justify-content: center;
-  background-color: white;
+  background-color: #f1cfb1;
 }
 
 div.container .form .content-table table {
@@ -48,8 +48,7 @@ div.container .form .content-table table {
 }
 
 div.container .form .content-table table tr:nth-child(2n) {
-  background-color: #99ade7;
-  color: whitesmoke;
+  background-color: #e9cdb4;
 }
 
 div.container .form .content-table table tr:nth-child(3n) td:nth-child(-n+3) {
@@ -57,7 +56,7 @@ div.container .form .content-table table tr:nth-child(3n) td:nth-child(-n+3) {
 }
 
 div.container .form .content-table table .header-caption th:nth-child(-n+4) {
-  border-bottom: 4px solid #3373ff;
+  border-bottom: 4px solid #1e847f;
 }
 
 div.container .form .content-table table td, div.container .form .content-table table th {
@@ -65,14 +64,24 @@ div.container .form .content-table table td, div.container .form .content-table 
 }
 
 div.container .form .content-table table td {
-  border-bottom: 2px solid #3373ff;
+  border-bottom: 2px solid #1e847f;
+}
+
+div.container .form div.logo {
+  margin-left: 25px;
+}
+
+div.container .form div.logo img {
+  width: 65px;
+  height: 65px;
 }
 
 div.container .block-header {
+  display: flex;
+  justify-content: center;
   font-family: 'Abril Fatface', cursive;
   margin-top: 50px;
   color: white;
-  text-align: center;
 }
 
 div.container .block-header h1 {
@@ -94,7 +103,7 @@ div.container div.controls {
 div.container div.controls button {
   padding: 10px 40px 10px 40px;
   margin: 20px 0 20px 0;
-  background-color: #481ba2;
+  background-color: black;
   color: white;
   font-size: 22px;
   border-color: white;
@@ -103,21 +112,22 @@ div.container div.controls button {
 }
 
 div.container div.controls button:hover {
-  background-color: #682ddc;
+  background-color: #e0995c;
+  color: black;
 }
 
 div.container input[type=text] {
-  width: calc(100% - 50px);
-  margin-left: 25px;
-  margin-right: 25px;
-  background-color: #481ba2;
+  width: calc(100% - 70px);
+  margin-left: 35px;
+  margin-right: 35px;
+  background-color: #1e847f;
   padding-left: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
   font-size: 25px;
   color: white;
   border-bottom: medium;
-  border-color: #3373ff;
+  border-color: #ecc19c;
   border-style: solid;
 }
 
@@ -153,8 +163,8 @@ div.container input[type=text] {
 
 @media (min-width: 1200px) {
   div.container {
-    background: #47d6f6;
-    background: linear-gradient(90deg, #47d6f6 0%, #5859e9 50%, #0044a7 100%);
+    background: #ecc19c;
+    background: repeating-linear-gradient(45deg, transparent 0, transparent 40px, black 40px, black 60px, #ecc19c 60px, #ecc19c 120px, black 120px, black 125px), repeating-linear-gradient(-45deg, transparent 0, transparent 40px, black 40px, black 60px, #ecc19c 60px, #ecc19c 120px, black 120px, black 125px), linear-gradient(-45deg, black, #1e847f);
   }
   div.container .form {
     margin: 25px 20% 30px 20%;

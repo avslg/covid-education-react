@@ -4,7 +4,9 @@ class CovidForm extends React.Component{
     render(){
         return(
             <div className="form">
-                <div className="block-header"><h1>COVID 19</h1>
+                <div className="block-header">
+                    <h1>COVID 19</h1>
+                    <div className="logo"><img src="/images/russia.png" alt="russia.png"/></div>
                 </div>
                 <p className="block-desc">
                     <span>Статистика по заболеваемости коронавирусной инфекции</span>
