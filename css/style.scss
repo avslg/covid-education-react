@@ -46,9 +46,13 @@ example
 $color: #534285;
 $backColor: #1e847f;
 $borderColor: #ecc19c;
-$gradientColor: black;
+$gradientColor: rgba(0, 0, 0, 0.4);
 $gradientColorTwo: #ecc19c;
 $gradientColorThree: $backColor;
+$gradientColorFour: #021f1d;
+$btnGradientOne: rgba(0,0,0, 0.2);
+$btnGradientTwo : orange;
+$btnGradientThree:  rgb(238, 93, 9);
 
 div.container{
     position: absolute;
@@ -60,10 +64,28 @@ div.container{
         border-style: solid;
         border-color: $borderColor; 
         border-width: 7px;
-        -webkit-box-shadow: 0px 0px 18px 4px rgba(0,0,0,0.31);
-        -moz-box-shadow: 0px 0px 18px 4px rgba(0,0,0,0.31);
-        box-shadow: 0px 0px 18px 4px rgba(0,0,0,0.31);
+        -webkit-box-shadow: 0px 0px 18px 4px rgba(0,0,0,0.51);
+        -moz-box-shadow: 0px 0px 18px 4px rgba(0,0,0,0.51);
+        box-shadow: 0px 0px 18px 4px rgba(0,0,0,0.51);
         border-radius: 4px;
+
+        .content-mobile{
+            background-color: #f1cfb1;
+            justify-content: center;
+            display: none;
+            table{
+                margin-top: 20px;
+                margin-bottom: 20px;
+                tr{
+                    td{
+                        border-bottom: 4px solid $backColor;
+                    }
+                    td:nth-child(2){
+                        background-color: #e5ba95;
+                    }
+                }
+            }
+        }
 
         .content-table{
             margin-top: 20px;
@@ -135,10 +157,12 @@ div.container{
         margin: 20px 0 20px 0;
         background-color: black;
         color: white;
+        cursor: pointer;
         font-size: 22px;
         border-color: white;
         border-style: solid;
         border-width: 3px;
+
     }
     div.controls button:hover{
         background-color: darken($borderColor, $amount: 15);
@@ -163,22 +187,121 @@ div.container{
     }
 
     @include breakpoint-by-screen-size(null, 320px){
-        background-color: yellowgreen;
+        background: #ecc19c;
+        background: repeating-linear-gradient(45deg, 
+        transparent 0, transparent 20px,
+        $gradientColor 20px, $gradientColor 30px,
+        $gradientColorTwo 30px, $gradientColorTwo 50px,
+        $gradientColor 50px, $gradientColor 55px
+        ),
+        repeating-linear-gradient(-45deg, 
+        transparent 0, transparent 20px,
+        $gradientColor 20px, $gradientColor 30px,
+        $gradientColorTwo 30px, $gradientColorTwo 50px,
+        $gradientColor 50px, $gradientColor 55px
+        ),
+        linear-gradient(-45deg, $gradientColorFour, $gradientColorThree) ;
+        
+        div.content-mobile{
+            display:flex !important;
+            table{
+                border-spacing: 20px 0;
+            }
+            
+        }
+        div.content-table{
+            display: none !important;
+        }
     }
     
     @include breakpoint-by-screen-size(321px, 479px){
-        background-color: #a3d9bab3;
+        background: #ecc19c;
+        background: repeating-linear-gradient(45deg, 
+        transparent 0, transparent 20px,
+        $gradientColor 20px, $gradientColor 30px,
+        $gradientColorTwo 30px, $gradientColorTwo 50px,
+        $gradientColor 50px, $gradientColor 55px
+        ),
+        repeating-linear-gradient(-45deg, 
+        transparent 0, transparent 20px,
+        $gradientColor 20px, $gradientColor 30px,
+        $gradientColorTwo 30px, $gradientColorTwo 50px,
+        $gradientColor 50px, $gradientColor 55px
+        ),
+        linear-gradient(-45deg, $gradientColorFour, $gradientColorThree) ;
+ 
     }
 
     @include breakpoint-by-screen-size(480px, 767px){
-        background-color: red;
+        background: repeating-linear-gradient(45deg, 
+        transparent 0, transparent 20px,
+        $gradientColor 20px, $gradientColor 30px,
+        $gradientColorTwo 30px, $gradientColorTwo 50px,
+        $gradientColor 50px, $gradientColor 55px
+        ),
+        repeating-linear-gradient(-45deg, 
+        transparent 0, transparent 20px,
+        $gradientColor 20px, $gradientColor 30px,
+        $gradientColorTwo 30px, $gradientColorTwo 50px,
+        $gradientColor 50px, $gradientColor 55px
+        ),
+        linear-gradient(-45deg, $gradientColorFour, $gradientColorThree) ;
+ 
     }
     @include breakpoint-by-screen-size(768px, 991px){
-        background-color: burlywood;
+        background: repeating-linear-gradient(45deg, 
+        transparent 0, transparent 45px,
+        $gradientColor 45px, $gradientColor 60px,
+        $gradientColorTwo 60px, $gradientColorTwo 110px,
+        $gradientColor 110px, $gradientColor 115px
+        ),
+        repeating-linear-gradient(-45deg, 
+        transparent 0, transparent 45px,
+        $gradientColor 45px, $gradientColor 60px,
+        $gradientColorTwo 60px, $gradientColorTwo 110px,
+        $gradientColor 110px, $gradientColor 115px
+        ),
+        linear-gradient(-45deg, $gradientColorFour, $gradientColorThree) ;
+        .form{
+            margin: 30px 40px 0 40px;
+            .content-table{
+                table{
+                    th{
+                        min-width: 150px;
+                    }
+                    border-spacing: 10px 0;
+                    padding-left: 10px;
+                }
+            }
+        }
     }
+
     @include breakpoint-by-screen-size(992px, 1199px)
     {
-        background-color: darkmagenta;
+        background: repeating-linear-gradient(45deg, 
+        transparent 0, transparent 40px,
+        $gradientColor 40px, $gradientColor 60px,
+        $gradientColorTwo 60px, $gradientColorTwo 120px,
+        $gradientColor 120px, $gradientColor 125px
+        ),
+        repeating-linear-gradient(-45deg, 
+        transparent 0, transparent 40px,
+        $gradientColor 40px, $gradientColor 60px,
+        $gradientColorTwo 60px, $gradientColorTwo 120px,
+        $gradientColor 120px, $gradientColor 125px
+        ),
+        linear-gradient(-45deg, $gradientColorFour, $gradientColorThree) ;
+            .form{
+                margin: 30px 40px 0 40px;
+                .content-table{
+                    table{
+                        th{
+                            min-width: 160px;
+                        }
+                        border-spacing: 15px 0;
+                    }
+                }
+            }
     }
     
     @include breakpoint-by-screen-size(1200px, null){
@@ -195,12 +318,7 @@ div.container{
         $gradientColorTwo 60px, $gradientColorTwo 120px,
         $gradientColor 120px, $gradientColor 125px
         ),
-        linear-gradient(-45deg, $gradientColor, $gradientColorThree) ;
-        
-        
-        
-
-
+        linear-gradient(-45deg, $gradientColorFour, $gradientColorThree) ;
             .form{
                 margin: 25px 20% 30px 20%;
                 .content-table{
@@ -211,6 +329,24 @@ div.container{
                         border-spacing: 15px 0;
                     }
                 }
+                div.controls {
+                    button{
+                        transition-property: background-images;
+                    } 
+                    button:hover{
+                        background: linear-gradient(80deg, $btnGradientOne, $btnGradientOne 10px, 
+                        transparent 10px, transparent 20px, $btnGradientOne 20px, $btnGradientOne 30px,
+                        transparent 30px, transparent 100%),
+                        linear-gradient(170deg, $btnGradientOne, $btnGradientOne 10px, 
+                        transparent 10px, transparent 20px, $btnGradientOne 20px, $btnGradientOne 30px,
+                        transparent 30px, transparent 100%),
+                        linear-gradient(45deg, $btnGradientTwo, $btnGradientThree);
+                        transition-duration: 11s;
+ 
+                    }
+
+              }
+
          }
 
     }

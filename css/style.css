@@ -29,10 +29,29 @@ div.container .form {
   border-style: solid;
   border-color: #ecc19c;
   border-width: 7px;
-  -webkit-box-shadow: 0px 0px 18px 4px rgba(0, 0, 0, 0.31);
-  -moz-box-shadow: 0px 0px 18px 4px rgba(0, 0, 0, 0.31);
-  box-shadow: 0px 0px 18px 4px rgba(0, 0, 0, 0.31);
+  -webkit-box-shadow: 0px 0px 18px 4px rgba(0, 0, 0, 0.51);
+  -moz-box-shadow: 0px 0px 18px 4px rgba(0, 0, 0, 0.51);
+  box-shadow: 0px 0px 18px 4px rgba(0, 0, 0, 0.51);
   border-radius: 4px;
+}
+
+div.container .form .content-mobile {
+  background-color: #f1cfb1;
+  justify-content: center;
+  display: none;
+}
+
+div.container .form .content-mobile table {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+div.container .form .content-mobile table tr td {
+  border-bottom: 4px solid #1e847f;
+}
+
+div.container .form .content-mobile table tr td:nth-child(2) {
+  background-color: #e5ba95;
 }
 
 div.container .form .content-table {
@@ -105,6 +124,7 @@ div.container div.controls button {
   margin: 20px 0 20px 0;
   background-color: black;
   color: white;
+  cursor: pointer;
   font-size: 22px;
   border-color: white;
   border-style: solid;
@@ -133,38 +153,68 @@ div.container input[type=text] {
 
 @media (max-width: 320px) {
   div.container {
-    background-color: yellowgreen;
+    background: #ecc19c;
+    background: repeating-linear-gradient(45deg, transparent 0, transparent 20px, rgba(0, 0, 0, 0.4) 20px, rgba(0, 0, 0, 0.4) 30px, #ecc19c 30px, #ecc19c 50px, rgba(0, 0, 0, 0.4) 50px, rgba(0, 0, 0, 0.4) 55px), repeating-linear-gradient(-45deg, transparent 0, transparent 20px, rgba(0, 0, 0, 0.4) 20px, rgba(0, 0, 0, 0.4) 30px, #ecc19c 30px, #ecc19c 50px, rgba(0, 0, 0, 0.4) 50px, rgba(0, 0, 0, 0.4) 55px), linear-gradient(-45deg, #021f1d, #1e847f);
+  }
+  div.container div.content-mobile {
+    display: flex !important;
+  }
+  div.container div.content-mobile table {
+    border-spacing: 20px 0;
+  }
+  div.container div.content-table {
+    display: none !important;
   }
 }
 
 @media (min-width: 321px) and (max-width: 479px) {
   div.container {
-    background-color: #a3d9bab3;
+    background: #ecc19c;
+    background: repeating-linear-gradient(45deg, transparent 0, transparent 20px, rgba(0, 0, 0, 0.4) 20px, rgba(0, 0, 0, 0.4) 30px, #ecc19c 30px, #ecc19c 50px, rgba(0, 0, 0, 0.4) 50px, rgba(0, 0, 0, 0.4) 55px), repeating-linear-gradient(-45deg, transparent 0, transparent 20px, rgba(0, 0, 0, 0.4) 20px, rgba(0, 0, 0, 0.4) 30px, #ecc19c 30px, #ecc19c 50px, rgba(0, 0, 0, 0.4) 50px, rgba(0, 0, 0, 0.4) 55px), linear-gradient(-45deg, #021f1d, #1e847f);
   }
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
   div.container {
-    background-color: red;
+    background: repeating-linear-gradient(45deg, transparent 0, transparent 20px, rgba(0, 0, 0, 0.4) 20px, rgba(0, 0, 0, 0.4) 30px, #ecc19c 30px, #ecc19c 50px, rgba(0, 0, 0, 0.4) 50px, rgba(0, 0, 0, 0.4) 55px), repeating-linear-gradient(-45deg, transparent 0, transparent 20px, rgba(0, 0, 0, 0.4) 20px, rgba(0, 0, 0, 0.4) 30px, #ecc19c 30px, #ecc19c 50px, rgba(0, 0, 0, 0.4) 50px, rgba(0, 0, 0, 0.4) 55px), linear-gradient(-45deg, #021f1d, #1e847f);
   }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
   div.container {
-    background-color: burlywood;
+    background: repeating-linear-gradient(45deg, transparent 0, transparent 45px, rgba(0, 0, 0, 0.4) 45px, rgba(0, 0, 0, 0.4) 60px, #ecc19c 60px, #ecc19c 110px, rgba(0, 0, 0, 0.4) 110px, rgba(0, 0, 0, 0.4) 115px), repeating-linear-gradient(-45deg, transparent 0, transparent 45px, rgba(0, 0, 0, 0.4) 45px, rgba(0, 0, 0, 0.4) 60px, #ecc19c 60px, #ecc19c 110px, rgba(0, 0, 0, 0.4) 110px, rgba(0, 0, 0, 0.4) 115px), linear-gradient(-45deg, #021f1d, #1e847f);
+  }
+  div.container .form {
+    margin: 30px 40px 0 40px;
+  }
+  div.container .form .content-table table {
+    border-spacing: 10px 0;
+    padding-left: 10px;
+  }
+  div.container .form .content-table table th {
+    min-width: 150px;
   }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
   div.container {
-    background-color: darkmagenta;
+    background: repeating-linear-gradient(45deg, transparent 0, transparent 40px, rgba(0, 0, 0, 0.4) 40px, rgba(0, 0, 0, 0.4) 60px, #ecc19c 60px, #ecc19c 120px, rgba(0, 0, 0, 0.4) 120px, rgba(0, 0, 0, 0.4) 125px), repeating-linear-gradient(-45deg, transparent 0, transparent 40px, rgba(0, 0, 0, 0.4) 40px, rgba(0, 0, 0, 0.4) 60px, #ecc19c 60px, #ecc19c 120px, rgba(0, 0, 0, 0.4) 120px, rgba(0, 0, 0, 0.4) 125px), linear-gradient(-45deg, #021f1d, #1e847f);
+  }
+  div.container .form {
+    margin: 30px 40px 0 40px;
+  }
+  div.container .form .content-table table {
+    border-spacing: 15px 0;
+  }
+  div.container .form .content-table table th {
+    min-width: 160px;
   }
 }
 
 @media (min-width: 1200px) {
   div.container {
     background: #ecc19c;
-    background: repeating-linear-gradient(45deg, transparent 0, transparent 40px, black 40px, black 60px, #ecc19c 60px, #ecc19c 120px, black 120px, black 125px), repeating-linear-gradient(-45deg, transparent 0, transparent 40px, black 40px, black 60px, #ecc19c 60px, #ecc19c 120px, black 120px, black 125px), linear-gradient(-45deg, black, #1e847f);
+    background: repeating-linear-gradient(45deg, transparent 0, transparent 40px, rgba(0, 0, 0, 0.4) 40px, rgba(0, 0, 0, 0.4) 60px, #ecc19c 60px, #ecc19c 120px, rgba(0, 0, 0, 0.4) 120px, rgba(0, 0, 0, 0.4) 125px), repeating-linear-gradient(-45deg, transparent 0, transparent 40px, rgba(0, 0, 0, 0.4) 40px, rgba(0, 0, 0, 0.4) 60px, #ecc19c 60px, #ecc19c 120px, rgba(0, 0, 0, 0.4) 120px, rgba(0, 0, 0, 0.4) 125px), linear-gradient(-45deg, #021f1d, #1e847f);
   }
   div.container .form {
     margin: 25px 20% 30px 20%;
@@ -174,5 +224,12 @@ div.container input[type=text] {
   }
   div.container .form .content-table table th {
     min-width: 150px;
+  }
+  div.container .form div.controls button {
+    transition-property: background-images;
+  }
+  div.container .form div.controls button:hover {
+    background: linear-gradient(80deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 10px, transparent 10px, transparent 20px, rgba(0, 0, 0, 0.2) 20px, rgba(0, 0, 0, 0.2) 30px, transparent 30px, transparent 100%), linear-gradient(170deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 10px, transparent 10px, transparent 20px, rgba(0, 0, 0, 0.2) 20px, rgba(0, 0, 0, 0.2) 30px, transparent 30px, transparent 100%), linear-gradient(45deg, orange, #ee5d09);
+    transition-duration: 11s;
   }
 }

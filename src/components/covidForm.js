@@ -13,6 +13,31 @@ class CovidForm extends React.Component{
                 </p> 
                 <form>
                     <input type="text" value={this.props.totalCases} readOnly={true} />
+                    <div className="content-mobile">
+                        <table>
+                            <tbody> 
+                            <tr>
+                                <td>Активные</td>
+                                <td>{this.props.activeCases}</td>
+                            </tr>
+                            <tr>
+                                <td>Критические</td>
+                                <td>{this.props.criticalCases}</td>
+                            </tr>
+                            <tr>
+                                <td colSpan="2">Кол-во смертей</td>
+                            </tr>
+                            <tr>
+                                <td>Всего</td>
+                                <td>{this.props.totalDeaths}</td>
+                            </tr>
+                            <tr>
+                                <td>Новые</td>
+                                <td>{this.props.newDeaths}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
                     <div className="content-table">
                         <table>
                             <tbody> 
