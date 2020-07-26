@@ -40,6 +40,8 @@ class App extends React.Component{
       time:result.response[0].time
     });
 
+    let formInput = document.querySelector(".form input");
+    formInput.value += " случаев";
    }
 
 
