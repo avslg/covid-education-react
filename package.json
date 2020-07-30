@@ -9,7 +9,9 @@
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint-config-airbnb": "^18.2.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -17,6 +19,12 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
+  },
+  "eslintConfig": {
+    "extends": ["react-app", "airbnb"],
+    "rules": {
+      "react/prop-types": 0
+    }
   },
   "browserslist": {
     "production": [
