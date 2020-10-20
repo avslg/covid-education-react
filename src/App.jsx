@@ -24,7 +24,7 @@ class App extends React.Component {
     // e.preventDefault();
     const country = 'russia';
     const xApiHost = 'covid-193.p.rapidapi.com'; // https://rapidapi.com/api-sports/api/covid-193
-    const xApiKey = 'ae61153825mshf5d7179ef888deap132741jsnd421646d8d62'; // CHANGE
+    const xApiKey = '99999999999999999'; // CHANGE
 
     const data = await fetch(`https://covid-193.p.rapidapi.com/statistics?country=${country}`, {
       method: 'GET',
